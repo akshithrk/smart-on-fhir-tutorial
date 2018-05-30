@@ -35,6 +35,10 @@
           var dobStr = monthIndex + '/' + day + '/' + year;
           var fname = '';
           var lname = '';
+          // defining custom variables based on patient fhir resource
+          var address = patient.address;
+          var phone = patient.telecom(system=phone);
+          var active = patient.active;
 
           if (typeof patient.name[0] !== 'undefined') {
             fname = patient.name[0].given.join(' ');
@@ -54,6 +58,10 @@
           p.lname = lname;
           p.age = parseInt(calculateAge(dob));
           p.height = getQuantityValueAndUnit(height[0]);
+          // denoting the above defined variables to context of the patient p
+          p.active = active;
+          p.address = address;
+          p.phone = phone;
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
@@ -90,6 +98,10 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
+      // adding the custom variables to return values when this function is called
+      active: {value: ''},
+      address: {value: ''},
+      phone: {value: ''}, 
     };
   }
 
@@ -155,6 +167,10 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
+    // defining the custom variables in this function to be used in index.html
+    $('#active').html(p.active);
+    $('#address').html(p.address);
+    $('#phone').html(p.phone);
   };
 
 })(window);
