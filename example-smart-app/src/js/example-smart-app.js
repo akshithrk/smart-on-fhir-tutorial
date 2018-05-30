@@ -103,7 +103,7 @@
       address: {value: ''},
       phone: {value: ''}, 
     };
-  }
+  } 
 
   function getBloodPressureValue(BPObservations, typeOfPressure) {
     var formattedBPObservations = [];
