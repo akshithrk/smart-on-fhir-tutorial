@@ -37,7 +37,7 @@
           var lname = '';
           // defining custom variables based on patient fhir resource
           var address = patient.address;
-          var phone = patient.telecom(system=phone);
+          var phone = patient.telecom;
           var active = patient.active;
 
           if (typeof patient.name[0] !== 'undefined') {
