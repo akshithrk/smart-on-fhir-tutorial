@@ -37,11 +37,11 @@
           var lname = '';
           // defining custom variables based on patient fhir resource
           var active = patient.active;
-          console.log(active);
+//           console.log(active);
           var address = patient.address;
-          console.log(address);
+//           console.log(address);
           var phone = patient.telecom;
-          console.log(phone);
+//           console.log(phone);
 
           if (typeof patient.name[0] !== 'undefined') {
             fname = patient.name[0].given.join(' ');
