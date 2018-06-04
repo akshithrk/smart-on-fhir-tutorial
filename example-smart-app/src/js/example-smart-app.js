@@ -38,9 +38,9 @@
           // defining custom variables based on patient fhir resource
           var active = patient.active;
 //           console.log(active);
-          var address = patient.address;
+          var address = patient.address.city;
 //           console.log(address);
-          var phone = patient.telecom;
+          var phone = patient.telecom.value;
 //           console.log(phone);
 
           if (typeof patient.name[0] !== 'undefined') {
