@@ -38,8 +38,8 @@
           // defining custom variables based on patient fhir resource
           var active = patient.active;
 //           console.log(active);
-          var add = patient.address;
-          var address = add.address.use + ', ' + add.address.line;
+//           var add = patient.address;
+          var address = patient.address.use //+ ', ' + add.address.line;
           
 //           console.log(address);
           var phone = patient.telecom.value;
