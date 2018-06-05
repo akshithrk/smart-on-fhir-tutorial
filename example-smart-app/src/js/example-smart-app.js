@@ -38,7 +38,9 @@
           // defining custom variables based on patient fhir resource
           var active = patient.active;
 //           console.log(active);
-          var address = patient.address.city;
+          var add = JSON.parse(patient.address);
+          var address = add.address[0].use + ', ' + add.address[0].line;
+          
 //           console.log(address);
           var phone = patient.telecom.value;
 //           console.log(phone);
