@@ -39,7 +39,7 @@
           var active = patient.active;
 //           console.log(active);
 //           var add = patient.address;
-          var address = Patient.address.city //+ ', ' + add.address[0].line;
+          var address = patient.address.city //+ ', ' + add.address[0].line;
           
 //           console.log(address);
           var phone = patient.telecom.value;
