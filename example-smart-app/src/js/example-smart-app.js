@@ -65,7 +65,7 @@
           p.height = getQuantityValueAndUnit(height[0]);
           // denoting the above defined variables to context of the patient p
           p.active = active;
-          p.address = address;
+          p.address = city;
           p.phone = phone;
 
           if (typeof systolicbp != 'undefined')  {
