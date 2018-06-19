@@ -108,11 +108,14 @@
     <script src='./lib/js/fhir-client-cerner-additions-1.0.0.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
+      function resizeIframe(obj) {obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';}
+    </script>
+    <script>
       var iframe = document.createElement('iframe');
       // iframe.style.display = "none";
       iframe.src = "http://biwebmsprd1.chboston.org/Childrens360/asp/Main.aspx?evt=3140&src=Main.aspx.3140&documentID=B415793A4B3EDD25828656AC6470BB07&Server=BIAPPMSPRD2&Project=BostonChildrens360&Port=0&share=1";
       iframe.align = "right"
-      iframe.height = "this.contentWindow.document.body.scrollHeight + 'px'"
+      iframe.onload = "resizeIframe(this)"
       document.body.appendChild(iframe);
     </script>
     <script>
