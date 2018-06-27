@@ -31,7 +31,6 @@
           var day = dob.getDate();
           var monthIndex = dob.getMonth() + 1;
           var year = dob.getFullYear();
-
           var dobStr = monthIndex + '/' + day + '/' + year;
           var fname = '';
           var lname = '';
@@ -40,11 +39,9 @@
 //           console.log(active);
 //           var add = patient.address;
           var address = patient.address[0].city //+ ', ' + add.address[0].line;
-          
 //           console.log(address);
           var phone = patient.telecom.value;
 //           console.log(phone);
-
           if (typeof patient.name[0] !== 'undefined') {
             fname = patient.name[0].given.join(' ');
             lname = patient.name[0].family.join(' ');
@@ -65,17 +62,18 @@
           p.height = getQuantityValueAndUnit(height[0]);
           // denoting the above defined variables to context of the patient p
           p.active = active;
-          p.address = address;
-          p.phone = phone;
+          if (typeof address !== 'undefined') {
+            p.address = address;
+          }
 
+          // p.address = address;
+          p.phone = phone;
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
           }
-
           if (typeof diastolicbp != 'undefined') {
             p.diastolicbp = diastolicbp;
           }
-
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
 
