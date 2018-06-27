@@ -39,7 +39,7 @@
 //           console.log(active);
 //           var add = patient.address;
           var address = '';
-          if (typeof patient.address[0].city !== 'undefined'){
+          if (typeof patient.address !== 'undefined'){
             address = patient.address[0].city;
           }
           // var address = patient.address[0].city //+ ', ' + add.address[0].line;
