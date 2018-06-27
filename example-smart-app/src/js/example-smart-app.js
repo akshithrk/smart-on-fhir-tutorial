@@ -38,7 +38,7 @@
           var active = patient.active;
 //           console.log(active);
 //           var add = patient.address;
-          var address = '';
+          var address = 'N/A';
           if (typeof patient.address !== 'undefined'){
             address = patient.address[0].city;
           }
