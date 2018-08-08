@@ -35,7 +35,7 @@
           var fname = '';
           var lname = '';
           // defining custom variables based on patient fhir resource
-          var active = patient.active;
+          var active = patient.active[0];
 //           console.log(active);
 //           var add = patient.address;
           var address = 'N/A';
