@@ -44,7 +44,7 @@
           }
           // var address = patient.address[0].city //+ ', ' + add.address[0].line;
 //           console.log(address);
-          var phone = patient.telecom.value;
+          var phone = patient.telecom[0].value;
 //           console.log(phone);
           if (typeof patient.name[0] !== 'undefined') {
             fname = patient.name[0].given.join(' ');
