@@ -119,17 +119,14 @@
     <!-- </body> -->
       <script type="text/javascript">
         var myDossier;
-        
         function load() {
           var container = document.getElementById("mydossier"),
             url = "http://biwebmsprd1.chboston.org:8080/MicroStrategyLibrary/app/A1B808F24F203703FA994E80889058BA/B415793A4B3EDD25828656AC6470BB07/K53--K46";
-  
           microstrategy.dossier.create({
             url: url,
             enableResponsive: true,
             placeholder: container
           })
-  
         };
       </script>
     </body>
