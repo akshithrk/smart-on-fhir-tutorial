@@ -35,17 +35,27 @@
           var fname = '';
           var lname = '';
           // defining custom variables based on patient fhir resource
-          var active = patient.active[0].value;
+          var active = 'N/A';
+          if (typeof patient.active !== 'undefined'){
+            active = patient.active;
+          }
 //           console.log(active);
 //           var add = patient.address;
+
           var address = 'N/A';
           if (typeof patient.address !== 'undefined'){
             address = patient.address[0].city;
           }
           // var address = patient.address[0].city //+ ', ' + add.address[0].line;
 //           console.log(address);
-          var phone = patient.telecom[0].value;
+
+          // var phone = patient.telecom.value;
 //           console.log(phone);
+          var phone = 'N/A';
+          if (typeof patient.phone !== 'undefined'){
+            address = patient.phone;
+          }
+          
           if (typeof patient.name[0] !== 'undefined') {
             fname = patient.name[0].given.join(' ');
             lname = patient.name[0].family.join(' ');
@@ -66,12 +76,17 @@
           p.height = getQuantityValueAndUnit(height[0]);
           // denoting the above defined variables to context of the patient p
           p.active = active;
+
+          // p.address = address;
           if (typeof address !== 'undefined') {
             p.address = address;
           }
+          
+          // p.phone = phone;
+          if (typeof phone !== 'undefined') {
+            p.phone = phone;
+          }
 
-          // p.address = address;
-          p.phone = phone;
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
           }
